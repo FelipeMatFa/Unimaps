@@ -15,6 +15,7 @@ header{
     grid-area: header;
     background-color: #514EF7;
     padding: 4vh;
+    height: 6vh;
 }
 
 header h1{
@@ -26,6 +27,7 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     grid-area: aside;
     background-color: #413DFF;
     width: 3vh;
@@ -39,20 +41,29 @@ aside {
     display: flex;
     flex-direction: column;
     padding: 4vh;
-    gap: 20px;
+    gap: 25px;
 }
 
-#Home, #Mapa, #Grupos, #Botmap, #Chatbot{
+#Home, #Mapa, #Grupos, #Dica, #Chatbot, #notificacoes{
     display: none;
     height: 5.5vh;
     width: 3vw;
+}
+
+#Dica{
+    width: 2.5vw;
+}
+
+#notificacoes{
+    width: 2vw;
+    padding: 2vw;
 }
 
 aside:hover{
     width: 6vw;
 }
 
-aside:hover #Home, aside:hover #Mapa, aside:hover #Grupos, aside:hover #Botmap, aside:hover #Chatbot{
+aside:hover #Home, aside:hover #Mapa, aside:hover #Grupos, aside:hover #Dica, aside:hover #Chatbot, aside:hover #notificacoes{
     display: flex;
 }
 
@@ -69,7 +80,9 @@ main {
 
 .div-elementos-conversa{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    width: 70vw;
 }
 
 .div-elementos-conversa p{
@@ -80,12 +93,17 @@ main {
     width: 30vw;
     height: 7vh;
     padding: 1vh;
+    margin-top: 2vw;
+}
+
+.div-elementos-conversa #mensagem_user{
+    margin-left: 50vw;
 }
 
 form{
-    position: absolute;
-    top: 90vh;
-    left: 25vw;
+    position: fixed;
+    top: 90%;
+    left: 25%;
     grid-area: form;   
 }
 
