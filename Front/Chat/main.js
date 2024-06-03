@@ -10,10 +10,19 @@ function criarChat(msg) {
 }
 
 function criarResposta(){
-    card1 = `
-        <p>NÃO</p>
-    `
-    return card1
+    if (mensagem.value.includes("me ajuda")){
+        card1 = `
+        <p>Toma no teu então</p>
+        `
+        return card1
+    }
+    else{
+        card1 = `
+        <p>Não</p>
+        `
+        return card1
+    }
+    
 }
 
 function texto(){
