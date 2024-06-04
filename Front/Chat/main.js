@@ -10,15 +10,15 @@ function criarChat(msg) {
 }
 
 function criarResposta(){
-    if (mensagem.value.includes("me ajuda")){
+    if (mensagem.value.includes("independencia do brasil") || mensagem.value.includes("independência do brasil")){
         card1 = `
-        <p>Toma no teu então</p>
+        <p>Quando foi proclamado a independência do brasil?</p>
         `
         return card1
     }
     else{
         card1 = `
-        <p>Não</p>
+        <p>Por favor, escolha uma matéria para estudar</p>
         `
         return card1
     }
