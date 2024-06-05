@@ -3,18 +3,6 @@
     padding: 0;
 }
 
-body{
-    display: grid;
-    grid-template-areas: "aside header" 
-                         "aside main";
-    grid-template-columns: 1% 99%;
-    grid-template-rows: 0.5fr 2fr;
-}
-
-header{
-    grid-area: header;
-}
-
 header h1{
     font-size: 25px;
     color: #FFFFFF;
@@ -24,13 +12,13 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-area: aside;
     background-color: #413DFF;
     width: 3vh;
     transition: width 0.3s ease;
     position: fixed;
     top: 0;
     height: 100%;
+    z-index: 2;
 }
 
 .div-elementos-navegacao{
@@ -48,6 +36,7 @@ aside {
 
 aside:hover{
     width: 6vw;
+    z-index: 3;
 }
 
 aside:hover #Home, aside:hover #Mapa, aside:hover #Grupos, aside:hover #Botmap, aside:hover #Chatbot{
@@ -55,16 +44,12 @@ aside:hover #Home, aside:hover #Mapa, aside:hover #Grupos, aside:hover #Botmap, 
 }
 
 main {
-    grid-area: main;
-    display: grid;
-    grid-template-areas: "div form";
-    grid-template-columns: 90% 10%;
-    grid-template-columns: 0.5fr 2fr;
-    padding-left: 20vh;
-    padding-right: 20vh;
-    padding-top: 6vh;
+    margin-left: 3vh;
+    
 }
 
 #map{
-    height: 400px;
+    height: 100vh;
+    width: 98.5vw;
+    z-index: 1;
 }
