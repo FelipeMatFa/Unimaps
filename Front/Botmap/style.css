@@ -13,6 +13,8 @@ body{
 
 header{
     grid-area: header;
+    background-color: #514EF7;
+    padding: 4vh;
 }
 
 header h1{
@@ -24,6 +26,7 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     grid-area: aside;
     background-color: #413DFF;
     width: 3vh;
@@ -37,20 +40,29 @@ aside {
     display: flex;
     flex-direction: column;
     padding: 4vh;
-    gap: 20px;
+    gap: 25px;
 }
 
-#Home, #Mapa, #Grupos, #Botmap, #Chatbot{
+#Home, #Mapa, #Grupos, #Dica, #Chatbot, #notificacoes{
     display: none;
     height: 5.5vh;
     width: 3vw;
+}
+
+#Dica{
+    width: 2.5vw;
+}
+
+#notificacoes{
+    width: 2vw;
+    padding: 2vw;
 }
 
 aside:hover{
     width: 6vw;
 }
 
-aside:hover #Home, aside:hover #Mapa, aside:hover #Grupos, aside:hover #Botmap, aside:hover #Chatbot{
+aside:hover #Home, aside:hover #Mapa, aside:hover #Grupos, aside:hover #Dica, aside:hover #Chatbot, aside:hover #notificacoes{
     display: flex;
 }
 
