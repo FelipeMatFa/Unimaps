@@ -40,11 +40,11 @@ async function cadastrarAluno(request,response){
     // Recuperando dados da requisição
     const params = Array(
         request.body.nome,
-        request.body.dt_nascimento,
-        request.body.time_do_coracao
+        request.body.email,
+        request.body.senha
     );
 
-    const query = 'INSERT INTO usuario(nome,senha,email) values(?, ?, ?);';
+    const query = 'INSERT INTO usuario(nome,email,senha) values(?, ?, ?);';
 
     connection.query(query, params, (err, results) => {
         if(results){
@@ -62,7 +62,7 @@ async function cadastrarAluno(request,response){
 
 async function update(request, response) {
     // Comando Sql
-    const query = 'UPDATE alunos nome ?, dt_nascimento = ?, time_do_coracao = ? WHERE id = ?; ';
+    const query = 'UPDATE usuario nome = ?, email = ?, senha = ? WHERE id = ?; ';
 
     const params = Array(
         request.body.nome,
@@ -93,14 +93,14 @@ async function deleteAluno(request, response) {
             response 
             .status(200) 
             .json({ success: true
-                   ,massage: "Aluno removido com sucesso!",
+                   ,massage: "Usuario removido com sucesso!",
                     data: results }
         ) } else { 
             response 
             .status(400) 
             .json({ 
                 success: false, 
-                message: "Alunos não removido!", 
+                message: "Usuario não removido!", 
                 mysql: err }
             ) 
         } 
@@ -116,7 +116,7 @@ async function listarEspecifico(request, response) {
             response 
             .status(200) 
             .json({ success: true,
-                    massage: "Aluno listado com sucesso!", 
+                    massage: "Usuario listado com sucesso!", 
                     data: results 
                 }) 
         } else { 
@@ -125,7 +125,7 @@ async function listarEspecifico(request, response) {
             .json(
                 { 
                     success: false,
-                    message: "Alunos não listado!", 
+                    message: "Usuario não listado!", 
                     mysql: err 
                 }) 
             } 
